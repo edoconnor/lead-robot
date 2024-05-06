@@ -1,0 +1,8 @@
+.mat-dialog-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto; 
+}
+
+html, body { height: 100%; }

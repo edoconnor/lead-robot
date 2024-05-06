@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  :host {
+    font-family: "Roboto Mono", monospace;
+  }
+  h2 {
+    font-family: "Roboto Mono", monospace;
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+  p {
+    font-family: "Roboto Mono", monospace;
+    font-weight: 300;
+  }
+  .edit-btn {
+    margin-top: 20px;
+    width: 150px;
+    align-self: center;
+    padding: 7px;
+  }
+  
+  .container-fluid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .create-container {
+    max-width: 800px;
+    width: 100%;
+    margin-top: 20px;
+  }

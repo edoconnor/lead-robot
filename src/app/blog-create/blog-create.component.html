@@ -1,0 +1,61 @@
+<div class="container-fluid">
+    <div class="create-container">
+      <h2>Create New Blog Post</h2>
+      <form (ngSubmit)="onSubmit()">
+        <!-- Title Field -->
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input
+            type="text"
+            id="title"
+            class="form-control"
+            [(ngModel)]="blogPost.title"
+            name="title"
+            required
+            #title="ngModel"
+          />
+          <div *ngIf="title.invalid && title.touched" class="text-danger">
+            Title is required.
+          </div>
+        </div>
+  
+        <!-- Content Field (Quill Editor) -->
+        <div class="mb-3">
+          <label for="content" class="form-label">Content</label>
+          <quill-editor
+            [(ngModel)]="blogPost.content"
+            name="content"
+            #content="ngModel"
+            [modules]="editorModules"
+            style="height: 200px"
+          >
+          </quill-editor>
+          <div *ngIf="content.invalid && content.touched" class="text-danger">
+            Content is required.
+          </div>
+        </div>
+  
+        <!-- Image URL Field -->
+        <div class="mb-3">
+          <label for="image_url" class="form-label">Image URL (optional)</label>
+          <input
+            type="text"
+            id="image_url"
+            class="form-control"
+            [(ngModel)]="blogPost.image_url"
+            name="image_url"
+            #imageUrl="ngModel"
+          />
+        </div>
+  
+        <!-- Submit Button -->
+        <button
+          type="submit"
+          class="btn btn-outline-danger edit-btn"
+          [disabled]="!title.valid || !content.valid"
+        >
+          Create Post
+        </button>
+      </form>
+    </div>
+  </div>
